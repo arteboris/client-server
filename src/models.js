@@ -15,19 +15,17 @@ const db = new sqlite3.Database(filePath, sqlite3.OPEN_READWRITE, err => {
 //         'CREATE TABLE IF NOT EXISTS users (user_id INTEGER NOT NULL PRIMARY KEY, email TEXT NOT NULL UNIQUE, passw TEXT NOT NULL UNIQUE);', function (err) {
 //             if (err) throw err;
 
-//             console.log('Table created')
+                // **** sqlite> select*from users; ****////
+// user_id  email            passw
+// -------  ---------------  -------
+// 1        artem@gmail.com  qwerty
+// 2        test@gmail.com   12345
+// 3        borys@gmail.com  123456
+
+//           console.log('Table created')
 //         });
 // });
 
-async function getUserId(email, pwd) {
-    const checkParams = `SELECT * FROM users WHERE email = ${email} AND passw = ${pwd};`;
-    return await  db.get(checkParams, (err, row) => {
-        if (err) return err;
-        return row;
-    });
-};
-
 module.exports = {
     db,
-    getUserId,
 };

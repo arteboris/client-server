@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js/client.js",
   "scripts": {
-    "test": "nodemon src/client.js",
-    "start": "nodemon src/server.js"
+    "test": "node src/client.js",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
